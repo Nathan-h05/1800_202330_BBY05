@@ -1,14 +1,13 @@
 # Project Title
 
 ## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+ An app to provide information and assistence in case of an emergency. 
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* ...
-* Reza I love my team mates
-* ...
+* Hello my name is Jeremy, I hope we stay on task.
+* Nathan Hilde - I love friends.
+* Reza I love my team mate
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
