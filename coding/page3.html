@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Description Page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .top {
+            margin: 20px 0;
+        }
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+        #emergency-button {
+            color: white;
+            background-color: red; /* تغییر رنگ دکمه به قرمز */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Description Page Content -->
+    <h1>Description and Tags</h1>
+    <!-- Form for description, road hazards, and emergency button -->
+    <form>
+        <label for="">description:</label><br><input type="text" placeholder="Description" id="description:" rows="5"><br><br>
+        <label for="">Date:</label><br><input type="text" placeholder="Date" id="Date:" rows="5"><br><br><br>
+        <label for="">Evacuation and rescue:</label><br><input type="text" placeholder="Road Hazards" id="Evacuation and rescue:" rows="5"><br><br><br>
+        <label for="">Emergency contact number:</label><br><button id="emergency-button">911</button>
+        
+    </form>
+
+    <!-- Bottom Buttons for Navigation -->
+    <div class="bottom">
+        <button>Home</button>
+        <button>Map</button>
+        <button>Photo Gallery</button>
+        <button>Take a Picture</button>
+    </div>
+
+    <!-- Add JavaScript for handling description and emergency functionality here -->
+</body>
+</html>
