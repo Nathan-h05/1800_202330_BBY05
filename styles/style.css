@@ -27,3 +27,12 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
   }
+
+  /* Main page background photo */
+  #mainbgphoto {
+    background-image: url('../images/homephoto3.png');
+    background-color: #ebebeb;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+  }
