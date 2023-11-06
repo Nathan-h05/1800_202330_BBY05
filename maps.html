@@ -35,6 +35,8 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/maps.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
 
 </head>
 
@@ -46,14 +48,25 @@
     <div>
         <h1>Maps</h1>
     </div>
-    <!--Google map-->
-    <div id="map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2604.4467394017515!2d-123.0044666239571!3d49.24897787314092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867721fd53fee5%3A0x355ab207647a109d!2sBritish%20Columbia%20Institute%20of%20Technology!5e0!3m2!1sen!2sca!4v1698786796576!5m2!1sen!2sca"
-            width="1200" height="550" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    
+<main>
+    <!-- MAPBOX -->
+    <h2>Map View Holder</h2>
+    <div id='map' style='width: 100%; height: 400px;'></div>
+    <!-- MAPBOX -->
+    <div>
+        <div class="card">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Need Suggestion?</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione eos, molestias
+                dolore deleniti repellendus quam eligendi consequatur asperiores in nostrum ex error. Voluptatibus,
+                odio reiciendis, aliquam accusantium distinctio perferendis dolorum voluptatum odit delectus iste
+                quisquam impedit inventore eos unde perspiciatis nam earum ad rem, nesciunt quam? Laudantium
+                voluptates repellat unde.</p>
+        </div>
     </div>
+</main>
 
     <!--Google Maps-->
 
@@ -71,6 +84,7 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/map.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
