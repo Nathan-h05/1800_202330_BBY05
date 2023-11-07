@@ -18,7 +18,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -27,14 +27,16 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/maps.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
 
 </head>
 
@@ -43,8 +45,33 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
+    <div>
+        <h1>Maps</h1>
+    </div>
+    
+<main>
+    <!-- MAPBOX -->
+    <h2>Map View Holder</h2>
+    <div id='map' style='width: 100%; height: 400px;'></div>
+    <!-- MAPBOX -->
+    <div>
+        <div class="card">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Need Suggestion?</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione eos, molestias
+                dolore deleniti repellendus quam eligendi consequatur asperiores in nostrum ex error. Voluptatibus,
+                odio reiciendis, aliquam accusantium distinctio perferendis dolorum voluptatum odit delectus iste
+                quisquam impedit inventore eos unde perspiciatis nam earum ad rem, nesciunt quam? Laudantium
+                voluptates repellat unde.</p>
+        </div>
+    </div>
+</main>
+
+    <!--Google Maps-->
+
     <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
+    <!-- <nav id="navbarPlaceholder"></nav> -->
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
@@ -57,6 +84,7 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/map.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->
 
 </body>

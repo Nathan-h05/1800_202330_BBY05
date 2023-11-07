@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
+    <link rel="stylesheet" type="text/css" href="styles/camera.css">
+    <title>Take a Photo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="comp1800 template" content="My 1800 App">
 
     <!------------------------>
@@ -32,10 +35,54 @@
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
+    <title>Take a Photo</title>
+    <script>
+        const takePhotoButton = document.getElementById('take-photo-button');
+        takePhotoButton.addEventListener('click', function () {
+            // Perform the action to take a photo here
+            // Then, navigate to the Upload Page
+            window.location.href = 'UploadPage.html';
+        });
+    </script>
+     <style>
+        body {
+            position: relative;
+            margin-bottom: 100px;
+        }
+        .bottom-buttons {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+        #camera-page {
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        #take-photo-button {
+            margin-top: 10px; /* Adjust this value to move the button down */
+        }
+    </style>
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <style>
+        /* Style for the video container */
+        #camera-container {
+            border: 2px solid black; /* Add a 2px black border */
+            display: inline-block; /* Display as inline block to wrap the border around the video */
+        }
 
+        /* Style for the video element */
+        #camera-feed {
+            width: 100%; /* Set the video width to 100% to fit the container */
+            height: auto; /* Maintain the video's aspect ratio */
+        }
+    </style>
 </head>
 
 <body>
@@ -46,7 +93,76 @@
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <!-- the body of your page goes here -->
+
+
+<center>
+    <style>
+        /* Define a border for the video element */
+        #camera-feed {
+          border: 8px solid black;border-radius: 10%; /* You can adjust the color and width as needed */
+        }
+      </style>
+<div style="width: 60%; height: 70%;">
+
+<br><video id="camera-feed" autoplay></video>
+<canvas id="photo-canvas" style="display: none;"></canvas><br><br>
+<a href="./cameraPage2.html"><button style="background-color: rgb(157, 157, 236);" id="capture-button">Capture Photo</button></a>
+
+</div>
+        
+</center>
+
+
+<script>
+    const cameraFeed = document.getElementById('camera-feed');
+    const photoCanvas = document.getElementById('photo-canvas');
+    const captureButton = document.getElementById('capture-button');
+    const width = 640; // Adjust the width as needed
+    const height = 480; // Adjust the height as needed
+
+    // Request access to the user's camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            cameraFeed.srcObject = stream;
+        })
+        .catch(function(error) {
+            console.error('Error accessing camera:', error);
+        });
+
+    // Function to capture a photo
+    function capturePhoto() {
+        photoCanvas.width = width;
+        photoCanvas.height = height;
+        const context = photoCanvas.getContext('2d');
+        context.drawImage(cameraFeed, 0, 0, width, height);
+
+        // Convert the captured frame to an image and save it
+        const imgData = photoCanvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        a.href = imgData;
+        a.download = 'captured-photo.png';
+        a.save
+        a.click();
+    }
+
+    // Attach the capturePhoto function to the button click event
+    captureButton.addEventListener('click', capturePhoto);
+</script>
+
+
+
+
+
+    
+
+    <!-- Bottom Buttons for Navigation -->
+    <div class="bottom-buttons">
+        <button>Home</button>
+        <button>Map</button>
+        <button>Photo Gallery</button>
+        <button>Take a Picture</button>
+    </div>
+
     <!-- stuff -->
 
     <!-- our own footer goes here-->

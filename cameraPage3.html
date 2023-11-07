@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
+    <link rel="stylesheet" type="text/css" href="styles/camera.css">
+    <title>Description page</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!------------------------>
@@ -10,7 +11,6 @@
     <!------------------------>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/style.css">
 
     <!------------------------------------------>
     <!-- Bootstrap Library CSS JS CDN go here -->
@@ -30,10 +30,25 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <link rel="stylesheet" src="styles/landingPage.css">
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
+    <style>
+        body {
+            text-align: center;
+        }
+        .top {
+            margin: 20px 0;
+        }
+       
+        #emergency-button {
+            color: white;
+            background-color: red; 
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
@@ -50,15 +65,41 @@
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
-    <div class="container text-center">
-        <img class="d-block mx-auto mb-4" src="./images/FirstPage.png" alt="Main Page Picture">
-        <h1>Do your run into obstacles or Emergencies often during your day-to-day life? <br> Get notified and notify your Community by joining Local Emergency.</h1>
-        <a href="login.html" class="btn btn-info" role="button">Sign up now!</a>
-   </div>
+    <div style="background-color: antiquewhite;"><h1>Description and Tags</h1></div>
+    <!-- Form for description, road hazards, and emergency button -->
+    <form>
+        <label style="font-size: large;" for="description">Title:</label><br>
+        <textarea style="width: 70%;" placeholder="Description" id="description" rows="5"></textarea><br><br>
+        
+        <label style="font-size: large;" for="Date">Description:</label><br>
+        <textarea style="width: 70%;" placeholder="Date" id="Date" rows="5"></textarea><br><br><br>
+        
+        <label style="font-size: large;" for="Evacuation and rescue">Tag:</label><br>
+        <textarea style="width: 70%;" placeholder="Tag" id="Evacuation" rows="5"></textarea><br>
+        <button style="border-radius: 20%; width: 7%;background-color: rgb(129, 129, 227);" id="save" >Save</button><br>
+        
+        
+    </form>
+    <label for="emergency-button">Emergency contact number:</label><br>
+        <a href="911"></a><button style="border-radius: 30%; width: 7%;" id="emergency-button">911</button>
+
+        <script>
+            document.getElementById('save-button').addEventListener('click', function() {
+                // Get values from the form fields
+                var title = document.getElementById('description').value;
+                var description = document.getElementById('Date').value;
+                var tag = document.getElementById('Evacuation').value;
+                
+    
+                // You can save the values or perform any other actions here
+                // For now, we'll just display an alert with the collected values
+                alert('Title: ' + title + '\nDescription: ' + description + '\nTag: ' + tag + '\nEmergency Contact: ' );
+            });
+        </script>
+
 
     <!-- our own footer goes here-->
-    
-    <!-- <nav id="footerPlaceholder"></nav> -->
+    <nav id="footerPlaceholder"></nav>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
