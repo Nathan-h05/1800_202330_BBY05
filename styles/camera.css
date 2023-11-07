@@ -1,0 +1,29 @@
+/* استایل پیش‌فرض برای تمام ابعاد */
+body {
+    background-color: lightgray;
+    font-size: 16px;
+}
+
+/* مدیا کوئری برای رزولوشن‌های کوچکتر از 700 پیکسل */
+@media (max-width: 700px) {
+    body {
+        background-color: lightblue;
+        font-size: 14px;
+    }
+}
+
+/* مدیا کوئری برای رزولوشن‌های بین 701 تا 1280 پیکسل */
+@media (min-width: 701px) and (max-width: 1280px) {
+    body {
+        background-color: lightgreen;
+        font-size: 16px;
+    }
+}
+
+/* مدیا کوئری برای رزولوشن‌های بین 1281 تا 1600 پیکسل */
+@media (min-width: 1281px) and (max-width: 1600px) {
+    body {
+        background-color: lightyellow;
+        font-size: 18px;
+    }
+}
