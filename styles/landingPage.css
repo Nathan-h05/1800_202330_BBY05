@@ -1,0 +1,8 @@
+#indexphoto {
+    background-image: url('../images/index2.png');
+    background-color: #9bb4ea;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: center;
+  }
