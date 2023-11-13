@@ -29,10 +29,10 @@ function showMap() {
           map.addImage('eventpin', image); // Pin Icon
   
           // READING information from "hikes" collection in Firestore
-          db.collection('posts').get().then(mapPosts => {
+          db.collection('posts').get().then((querySnapshot) => {
             const features = []; // Defines an empty array for information to be added to
   
-            mapPosts.forEach(doc => {
+            querySnapshot.forEach(doc => {
               lat = doc.data().lat;
               lng = doc.data().lng;
               console.log(lat, lng);
@@ -59,7 +59,7 @@ function showMap() {
             });
   
             // Adds features as a source of data for the map
-            map.addSource('places', {
+            map.addSource('posts', {
               'type': 'geojson',
               'data': {
                 'type': 'FeatureCollection',
@@ -70,10 +70,10 @@ function showMap() {
             // Creates a layer above the map displaying the pins
             // by using the sources that was just added
             map.addLayer({
-              'id': 'places',
+              'id': 'posts',
               'type': 'symbol',
             // source: 'places',
-              'source': 'places',
+              'source': 'posts',
               'layout': {
               'icon-image': 'eventpin', // Pin Icon
               'icon-size': 0.1, // Pin Size
@@ -85,7 +85,7 @@ function showMap() {
     // Add Click event listener, and handler function that creates a popup
     // that displays info from "hikes" collection in Firestore
     //-----------------------------------------------------------------------
-    map.on('click', 'places', (e) => {
+    map.on('click', 'posts', (e) => {
       // Extract coordinates array.
       // Extract description of that place
       const coordinates = e.features[0].geometry.coordinates.slice();
@@ -106,12 +106,12 @@ function showMap() {
     // Add mousenter event listener, and handler function to 
     // Change the cursor to a pointer when the mouse is over the places layer.
     //-----------------------------------------------------------------------
-    map.on('mouseenter', 'places', () => {
+    map.on('mouseenter', 'posts', () => {
       map.getCanvas().style.cursor = 'pointer';
     });
 
     // Defaults cursor when not hovering over the places layer
-    map.on('mouseleave', 'places', () => {
+    map.on('mouseleave', 'posts', () => {
       map.getCanvas().style.cursor = '';
     });
   });

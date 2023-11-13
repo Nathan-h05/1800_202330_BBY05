@@ -54,113 +54,35 @@
 <body>
     <!-- Your HTML Layout go here -->
     <!-- our own navbar goes here -->
+    <div class="text-center py-1 bg-danger" >
+        <h1>My Posts</b></h1>
+    </div>
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <div id="content">
-
-        <div id="banner">
-          <img src="http://dummyimage.com/1100x350/aabbcc/000000" alt="image"/>
-        </div>
-  
-        <div id="imageGallery">
-          <h2>Here's an image gallery:</h2>
-  
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
+    <div class="container"> 
+      <h1><center>Your previous posts</h1>
+      <!-- Here is the container for cards  -->
+      <div class="container">
+          <div id="posts-go-here" class="row row-cols-auto">
           </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="boxInner">
-              <img src="http://dummyimage.com/640x480/ccbbff/000000" alt="image">
-              <div class="titleBox">Description of Photo and Tags </div>
-            </div>
-          </div>
-  
-  
-        </div>
-  
       </div>
+</div>
+<!-- Templates for general use, not displayed -->
+<template id="postCardTemplate">
+  <div class="card py-2 mx-2" style="width: 21rem">
+      <img class="card-image card-img-top" src=" ..." alt="..." />
+      <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-length">placeholder text</p>
+          <br />
+          <p class="card-text">
+             The description of the inciddent will go in here.
+          </p>
+          <a class="btn btn-primary card-href">View this Post</a>
+      </div>
+  </div>
+</template>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
@@ -168,7 +90,9 @@
     <!-- Your own JavaScript functions go here -->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/photoLib.js"></script>
+    
+    
 </body>
 
 </html>
