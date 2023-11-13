@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <link rel="stylesheet" type="text/css" href="styles/camera.css">
     <title>Take a Photo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,7 +55,7 @@
             bottom: 0;
             width: 100%;
             background-color: #f2f2f2;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
         }
         #camera-page {
@@ -66,6 +67,12 @@
         #take-photo-button {
             margin-top: 10px; /* Adjust this value to move the button down */
         }
+        
+        body {
+            background: radial-gradient(circle at bottom, rgb(155, 155, 247) 0, black 100%);
+height: 100vh;
+overflow: auto; /* or overflow: scroll; */
+}
     </style>
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
@@ -80,7 +87,18 @@
         /* Style for the video element */
         #camera-feed {
             width: 100%; /* Set the video width to 100% to fit the container */
-            height: auto; /* Maintain the video's aspect ratio */
+            height: 50%; /* Allow the video's height to adjust according to its width */
+            max-width: 100%; /* Add a maximum width for the video */
+            border: 8px solid black; /* Border styling */
+            border-radius: 10%;
+        }
+
+        @media screen and (max-width: 600px) {
+            #camera-feed {
+                width: 140%;
+                height: 400px;
+                
+            }
         }
     </style>
 </head>
@@ -99,14 +117,15 @@
     <style>
         /* Define a border for the video element */
         #camera-feed {
-          border: 8px solid black;border-radius: 10%; /* You can adjust the color and width as needed */
+          border: 3px solid rgb(244, 181, 181);border-radius: 10%; /* You can adjust the color and width as needed */
+          outline: 3px solid rgb(246, 54, 54);
         }
       </style>
 <div style="width: 60%; height: 70%;">
 
 <br><video id="camera-feed" autoplay></video>
-<canvas id="photo-canvas" style="display: none;"></canvas><br><br>
-<a href="./cameraPage2.html"><button style="background-color: rgb(157, 157, 236);" id="capture-button">Capture Photo</button></a>
+<canvas id="photo-canvas" style="display: none;"></canvas><br>
+<a href="./cameraPage2.html"><button style="background-color: rgb(157, 157, 236); border-radius: 10%;" id="capture-button">Capture Photo</button></a>
 
 </div>
         
@@ -149,13 +168,7 @@
     captureButton.addEventListener('click', capturePhoto);
 </script>
 
-    <!-- Bottom Buttons for Navigation -->
-    <div class="bottom-buttons">
-        <button>Home</button>
-        <button>Map</button>
-        <button>Photo Gallery</button>
-        <button>Take a Picture</button>
-    </div>
+   
 
     <!-- stuff -->
 

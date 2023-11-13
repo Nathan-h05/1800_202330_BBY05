@@ -40,14 +40,31 @@
         .top {
             margin: 20px 0;
         }
+        .map1{
+            width: 90%;
+            height: 400px;
+        }
        
         #emergency-button {
             color: white;
-            background-color: red; 
+            background-color: rgb(0, 255, 106); 
             border: none;
             padding: 10px 20px;
             font-size: 16px;
         }
+        
+        @media screen and (max-width: 600px) {
+            .map1{
+                width: 90%;
+                height: 300px;
+            }
+        }
+        body {
+            background: radial-gradient(circle at bottom, rgb(155, 155, 247) 0, black 100%);
+height: 100vh;
+overflow: auto; /* or overflow: scroll; */
+}
+
     </style>
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
@@ -67,16 +84,14 @@
     <!-- stuff -->
     <div style="background-color: antiquewhite;"><h1>Map & Emergency contact </h1></div>
     <!-- Form for description, road hazards, and emergency button -->
-    <br><iframe
-       width="90%"
-       height="400"
+    <br><iframe class="map1"
        frameborder="0"
        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26007.285110424336!2d-123.1207!3d49.2827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94d51%3A0xa87876e2a2b49b18!2sVancouver%2C%20BC!5e0!3m2!1sen!2sca!4v1554135542509!5m2!1sen!2sca"
        allowfullscreen
    ></iframe>
     
-    <br><hr><label for="emergency-button">Emergency contact number:</label><br>
-        <a href="911"></a><button style="background-color: rgb(187, 0, 0);" id="capture-button">911</button>
+    <br><hr><label style="background-color: blanchedalmond;" for="emergency-button">Emergency contact number:</label><br>
+        <a href="911"></a><button style="background-color: rgb(187, 0, 0);border-radius: 20%;" id="capture-button">911</button>
 
         <script>
             document.getElementById('save-button').addEventListener('click', function() {
