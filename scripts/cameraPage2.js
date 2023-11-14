@@ -34,7 +34,6 @@ function writeReview() {
     console.log("inside write review");
     let postTitle = document.getElementById("title").value;
     let tags = document.getElementById("level").value;
-    let hikeSeason = document.getElementById("season").value;
     let postDescription = document.getElementById("description").value;
 
     // // Get the star rating
@@ -51,7 +50,7 @@ function writeReview() {
     //     }
     // });
 
-    console.log(postTitle, tags, hikeSeason, postDescription);
+    console.log(postTitle, tags, postDescription);
 
     var user = firebase.auth().currentUser;
     if (user) {
@@ -64,7 +63,6 @@ function writeReview() {
             userID: userID,
             name: postTitle,
             importance: tags,
-            season: hikeSeason,
             details: postDescription,
             last_updated: firebase.firestore.FieldValue.serverTimestamp() // YOOOOOOOOOO
         }).then(() => {
