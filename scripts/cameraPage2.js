@@ -62,11 +62,11 @@ function writeReview() {
         db.collection("posts").add({
             // postsDocID: postID,
             userID: userID,
-            title: postTitle,
-            level: tags,
+            name: postTitle,
+            importance: tags,
             season: hikeSeason,
-            description: postDescription,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp() // YOOOOOOOOOO
+            details: postDescription,
+            last_updated: firebase.firestore.FieldValue.serverTimestamp() // YOOOOOOOOOO
         }).then(() => {
             window.location.href = "thanks.html"; // Redirect to the thanks page
         });
