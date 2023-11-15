@@ -33,11 +33,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
+    <link rel="stylesheet" src="./styles/camera.css"/>
+    !-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    
+    
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <title>Take a Photo</title>
-    <script>
+    <!-- <script>
         const takePhotoButton = document.getElementById('take-photo-button');
         takePhotoButton.addEventListener('click', function () {
             // Perform the action to take a photo here
@@ -45,62 +48,9 @@
             window.location.href = 'UploadPage.html';
         });
     </script>
-     <style>
-        body {
-            position: relative;
-            margin-bottom: 100px;
-        }
-        .bottom-buttons {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f2f2f2;
-            padding: 20px;
-            text-align: center;
-        }
-        #camera-page {
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        #take-photo-button {
-            margin-top: 10px; /* Adjust this value to move the button down */
-        }
-        
-        body {
-            background: radial-gradient(circle at bottom, rgb(155, 155, 247) 0, black 100%);
-height: 100vh;
-overflow: auto; /* or overflow: scroll; */
-}
-    </style>
+     -->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-    <style>
-        /* Style for the video container */
-        #camera-container {
-            border: 2px solid black; /* Add a 2px black border */
-            display: inline-block; /* Display as inline block to wrap the border around the video */
-        }
 
-        /* Style for the video element */
-        #camera-feed {
-            width: 100%; /* Set the video width to 100% to fit the container */
-            height: 50%; /* Allow the video's height to adjust according to its width */
-            max-width: 100%; /* Add a maximum width for the video */
-            border: 8px solid black; /* Border styling */
-            border-radius: 10%;
-        }
-
-        @media screen and (max-width: 600px) {
-            #camera-feed {
-                width: 140%;
-                height: 400px;
-                
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -108,7 +58,7 @@ overflow: auto; /* or overflow: scroll; */
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <!-- our own navbar goes here -->
+     <!-- stuff -->
     <div class="text-center py-1 bg-danger">
         <h1>Camera</b></h1>
     </div>
@@ -118,63 +68,14 @@ overflow: auto; /* or overflow: scroll; */
 
 
 <center>
-    <style>
-        /* Define a border for the video element */
-        #camera-feed {
-          border: 3px solid rgb(244, 181, 181);border-radius: 10%; /* You can adjust the color and width as needed */
-          outline: 3px solid rgb(246, 54, 54);
-        }
-      </style>
 <div style="width: 60%; height: 70%;">
 
 <br><video id="camera-feed" autoplay></video>
 <canvas id="photo-canvas" style="display: none;"></canvas><br>
 <a href="./cameraPage2.html"><button style="background-color: rgb(157, 157, 236); border-radius: 10%;" id="capture-button">Capture Photo</button></a>
 
-</div>
-        
+</div> 
 </center>
-
-
-<script>
-    const cameraFeed = document.getElementById('camera-feed');
-    const photoCanvas = document.getElementById('photo-canvas');
-    const captureButton = document.getElementById('capture-button');
-    const width = 640; // Adjust the width as needed
-    const height = 480; // Adjust the height as needed
-
-    // Request access to the user's camera
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-            cameraFeed.srcObject = stream;
-        })
-        .catch(function(error) {
-            console.error('Error accessing camera:', error);
-        });
-
-    // Function to capture a photo
-    function capturePhoto() {
-        photoCanvas.width = width;
-        photoCanvas.height = height;
-        const context = photoCanvas.getContext('2d');
-        context.drawImage(cameraFeed, 0, 0, width, height);
-
-        // Convert the captured frame to an image and save it
-        const imgData = photoCanvas.toDataURL('image/png');
-        const a = document.createElement('a');
-        a.href = imgData;
-        a.download = 'captured-photo.png';
-        a.save
-        a.click();
-    }
-
-    // Attach the capturePhoto function to the button click event
-    captureButton.addEventListener('click', capturePhoto);
-</script>
-
-   
-
-    <!-- stuff -->
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
@@ -184,6 +85,7 @@ overflow: auto; /* or overflow: scroll; */
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/camera.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->
 
 </body>

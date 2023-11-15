@@ -77,69 +77,8 @@
     <!------------------------------>
 
     <!-- our own navbar goes here -->
-    <div class="text-center py-1 bg-danger">
-        <h1>Upload Post</b></h1>
-    </div>
 
-    <nav id="navbarPlaceholder"></nav>
 
-    <!-- the body of your page goes here -->
-    <!-- Upload Page Content -->
-    <!-- Upload form and map here -->
-    <br>
-
-    <center>
-        <script>
-            // Function to find the latest image file in the folder
-            function findLatestImage() {
-                let latestImage = new Image();
-                let latestImageNumber = 0;
-
-                // Assuming images are stored in the /images folder
-                const folderPath = '/images/';
-
-                // Loop through images to find the latest one
-                for (let i = 1; i <= latestImageNumber; i++) {
-                    const imageUrl = folderPath + `captured-photo(${i}).png`;
-                    let image = new Image();
-                    image.src = imageUrl;
-
-                    // Check if the image exists
-                    image.onload = function () {
-                        latestImageNumber = i;
-                        latestImage.src = imageUrl;
-                    };
-                }
-            }
-
-            // Call the function to find and display the latest image
-            findLatestImage();
-        </script>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <input type="file" id="imageInput" accept="image/*" style="display: none;" />
-
-            <img id="preview" src="" alt="Image Preview" style="max-width: 300px; display: none;" /><br>
-            <button style="background-color: rgb(135, 135, 242);border-radius: 20%;" type="button"
-                onclick="document.getElementById('imageInput').click();">Choose Image</button>
-        </form>
-    </center>
-
-    <script>
-        document.getElementById('imageInput').addEventListener('change', function () {
-            var preview = document.getElementById('preview');
-            var file = this.files[0];
-            var reader = new FileReader();
-
-            reader.onload = function () {
-                preview.src = reader.result;
-                preview.style.display = 'block';
-            };
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 
     <!-- <form>
         <fieldset class="mb-3" id="personalInfoFields">
@@ -159,6 +98,10 @@
             <br>
             <form>
                 <div class="form-group">
+                    <div class="container py-3">
+                        <input type="file" id="mypic-input" accept="image/*" />
+                        <img id="mypic-goes-here" width=100 height=100 />
+                    </div>
                     <label for="exampleFormControlInput1">Add a title</label>
                     <input type="text" class="form-control" id="title" placeholder="Title">
                 </div><br>
@@ -180,7 +123,7 @@
                     <br>
                     <div class="d-flex justify-content-end">
                         <button type="button" class="btn btn-lg btn-primary pull-right"
-                            onclick="writeReview()">Submit</button>
+                            onclick="savePost()">Submit</button>
                     </div>
                 </div>
             </form>
@@ -195,8 +138,10 @@
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/camera.js"></script>
     <script src="./scripts/cameraPage2.js"></script>
 
 </body>

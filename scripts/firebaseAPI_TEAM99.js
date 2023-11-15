@@ -19,3 +19,4 @@ var firebaseConfig = {
 //--------------------------------------------
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();    // Creates new database for us. "db".
+const storage = firebase.storage();

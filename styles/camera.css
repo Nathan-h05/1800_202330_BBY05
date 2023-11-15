@@ -1,30 +1,55 @@
-/* استایل پیش‌فرض برای تمام ابعاد */
+
 body {
-    background-color: lightgray;
-    font-size: 16px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.bottom-buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+#camera-page {
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+#take-photo-button {
+    margin-top: 10px; /* Adjust this value to move the button down */
 }
 
-/* مدیا کوئری برای رزولوشن‌های کوچکتر از 700 پیکسل */
-@media (max-width: 700px) {
-    body {
-        background-color: lightblue;
-        font-size: 14px;
+body {
+    background: radial-gradient(circle at bottom, rgb(155, 155, 247) 0, black 100%);
+height: 100vh;
+overflow: auto;
+
+}
+/* Style for the video container */
+#camera-container {
+    border: 2px solid black; /* Add a 2px black border */
+    display: inline-block; /* Display as inline block to wrap the border around the video */
+}
+
+/* Style for the video element */
+#camera-feed {
+    width: 100%; /* Set the video width to 100% to fit the container */
+    height: 50%; /* Allow the video's height to adjust according to its width */
+    max-width: 100%; /* Add a maximum width for the video */
+    border: 8px solid black; /* Border styling */
+    border-radius: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    #camera-feed {
+        width: 140%;
+        height: 400px;
+        
     }
 }
-
-/* مدیا کوئری برای رزولوشن‌های بین 701 تا 1280 پیکسل */
-@media (min-width: 701px) and (max-width: 1280px) {
-    body {
-        background-color: lightgreen;
-        font-size: 16px;
-    }
-}
-
-/* مدیا کوئری برای رزولوشن‌های بین 1281 تا 1600 پیکسل */
-@media (min-width: 1281px) and (max-width: 1600px) {
-    body {
-        background-color: lightyellow;
-        font-size: 18px;
-    }
-}
-
+#camera-feed {
+    border: 3px solid rgb(244, 181, 181);border-radius: 10%; /* You can adjust the color and width as needed */
+    outline: 3px solid rgb(246, 54, 54);
+  }
