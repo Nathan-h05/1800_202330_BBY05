@@ -64,7 +64,7 @@ function writeReview() {
             name: postTitle,
             importance: tags,
             details: postDescription,
-            last_updated: firebase.firestore.FieldValue.serverTimestamp() // YOOOOOOOOOO
+            last_updated: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
             window.location.href = "thanks.html"; // Redirect to the thanks page
         });
