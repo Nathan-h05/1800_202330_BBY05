@@ -22,3 +22,20 @@ function getNameFromAuth() {
     });
 }
 getNameFromAuth(); //run the function
+
+////////////////
+// Reference to the 'quotes' collection
+const quotesCollection = firebase.firestore().collection('quotes');
+
+// Get random quote
+quotesCollection.get().then((querySnapshot) => {
+  const quotes = [];
+  querySnapshot.forEach((doc) => {
+    quotes.push(doc.data().message);
+  });
+
+  // Display a random quote
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  document.getElementById('quote').innerHTML = `<p>Quote of the day: ${randomQuote}</p>`;
+});
