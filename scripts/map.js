@@ -49,7 +49,7 @@ function showMap() {
             features.push({
               'type': 'Feature',
               'properties': {
-                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/postsLibrary.html?id=${doc.id}" target="_blank" title="Opens in a new window">View Post</a>`
+                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/viewPosts.html?id=${doc.id}" target="_blank" title="Opens in a new window">View Post</a>`
               },
               'geometry': {
                 'type': 'Point',
@@ -257,7 +257,7 @@ function addPostPins(map) {
         const id = e.features[0].properties.id;  //get the "id" field
         //alert(id);
         // re-direct to another page that gives more details about this post (by id)
-        window.location.href = './eachHike.html?docID=' + id;
+        window.location.href = './viewPosts.html?docID=' + id;
       });
 
       //--------------------------------------------------
