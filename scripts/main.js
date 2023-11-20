@@ -23,7 +23,7 @@ function getNameFromAuth() {
 }
 getNameFromAuth(); //run the function
 
-////////////////
+// Reza w quotes gen
 // Reference to the 'quotes' collection
 const quotesCollection = firebase.firestore().collection('quotes');
 
@@ -38,4 +38,5 @@ quotesCollection.get().then((querySnapshot) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
   document.getElementById('quote').innerHTML = `<p>Quote of the day: ${randomQuote}</p>`;
+  // document.getElementById("quote").innerText = randomQuote;
 });
