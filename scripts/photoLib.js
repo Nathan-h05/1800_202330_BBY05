@@ -58,6 +58,8 @@ function displayCardsDynamically(collection) {
                 // var postLength = doc.data().length; //gets the length field
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
 
+                var docID = doc.id; //grab the id for that hike doc.
+                
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
                 // newcard.querySelector('.card-length').innerHTML = postLength +"km";
@@ -66,6 +68,7 @@ function displayCardsDynamically(collection) {
                 let placeholder = "placeholder";
                 //newcard.querySelector('.card-image').src = `./images/${placeholder}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('.card-image').src = code; //Example: NV01.jpg
+                newcard.querySelector('a').href = "editPosts.html?docID="+docID; //Button / readmore.
 
                 //Optional: give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
