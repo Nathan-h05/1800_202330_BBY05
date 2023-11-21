@@ -1,4 +1,4 @@
-
+// var theMan = db.collection("users").doc(postUserID);
 
 
 //Displays 1 card based on post clicked.
@@ -17,8 +17,19 @@ function displaySingleCardById(collection, postId) {
                 let date = time.toDate();
                 let lat = doc.data().lat;
                 let lng = doc.data().lng;
-                // let location = GeoPoint(lat, lng)
                 
+                // Gets the user who uploaded the post
+                let postUserID = doc.data().userID;
+                db.collection('users').doc(postUserID).get()
+                    .then(doc => {
+                        let userName = doc.data().name;
+                        document.getElementById("owner").innerText = userName;
+                        document.getElementById("ownerHeader").innerText = userName;
+                    })
+                    .catch(error => {
+                        console.error("Error getting document:", error);
+                    })
+
 
                 let newcard = cardTemplate.content.cloneNode(true);
 
@@ -27,8 +38,7 @@ function displaySingleCardById(collection, postId) {
                 newcard.querySelector('.card-tags').innerHTML = tags;
                 newcard.querySelector('.card-time').innerHTML = date;
                 newcard.querySelector('.card-image').src = code;
-
-                // newcard.querySelector('.card-location').innerHTML = city;
+                
 
                 singleCardContainer.appendChild(newcard);
             } else {

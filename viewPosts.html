@@ -34,7 +34,7 @@
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="./styles/viewPosts.css">
 
 </head>
 
@@ -45,7 +45,10 @@
 
     <!-- our own navbar goes here -->
     <div class="text-center py-1 bg-danger">
-        <h1>Post</h1>
+        <h1 id="ownerHeader">Post</h1>
+        <!-- <h1> 
+            Uploaded by:<div id="owner"></div> 
+        </h1> -->
     </div>
     <nav id="navbarPlaceholder"></nav>
 
@@ -56,30 +59,32 @@
     <div class="container">
         <!-- <h1><center>Your previous posts</h1> -->
         <!-- Here is the container for cards  -->
-        <div class="container">
+        <div class="container d-flex justify-content-center align-items-center">
             <div id="posts-go-here" class="row row-cols-auto">
             </div>
         </div>
     </div>
     <!-- Templates for general use, not displayed -->
     <template id="postCardTemplate">
-        <div class="card py-2 mx-2" style="width: 50rem;" >
+        <div class="card py-2 mx-2" style="width: 50rem;">
             <img class="card-image card-img-top" src=" ..." alt="..." />
             <div class="card-body text-center">
-                <h1 class="card-title">Card title</h1>
-                <p class="card-text">The description of the inciddent will go in here.</p>
-                <br/>
+                <h1 class="card-title">"Card title"</h1>
+                <p class="card-text">"Description"</p>
+                <br />
                 <p class="card-tags text-center btn btn-danger">
-                    Tag placeholder
+                    "Tags"
                 </p>
                 <br>
                 <br>
-                <p class="card-time">
-                    time placeholder
+                <p>
+                    <i class="card-time">
+                        "Date"
+                    </i>
                 </p>
-                <br/>
-                <p class="card-location">
-                    location placeholder
+                <br />
+                <p id="txtSmall">
+                    Uploaded by: <div id="owner"></div>
                 </p>
                 <br>
                 <!-- <a class="btn btn-primary card-href">View Post Details</a> -->

@@ -23,6 +23,7 @@ function getNameFromAuth() {
 }
 getNameFromAuth(); //run the function
 
+
 // Reza w quotes gen
 // Reference to the 'quotes' collection
 const quotesCollection = firebase.firestore().collection('quotes');
