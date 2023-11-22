@@ -120,12 +120,12 @@ function showMap() {
 
     // Add the image to the map style.
     map.loadImage(
-      'https://cdn-icons-png.flaticon.com/512/61/61168.png',
+      'images/myLocation.png',
       (error, image) => {
         if (error) throw error;
 
         // Add the image to the map style with width and height values
-        map.addImage('userpin', image, { width: 10, height: 10 });
+        map.addImage('userpin', image, { width: 15, height: 15 });
 
         // Adds user's current location as a source to the map
         navigator.geolocation.getCurrentPosition(position => {
@@ -239,7 +239,7 @@ function addPostPins(map) {
         'source': 'places',
         'paint': {
           'circle-color': '#4264fb',
-          'circle-radius': 6,
+          'circle-radius': 222,
           'circle-stroke-width': 2,
           'circle-stroke-color': '#ffffff'
         }
