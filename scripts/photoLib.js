@@ -60,8 +60,13 @@ function displayUserPosts(collection) {
                         var code = doc.data().code;
                         var tags = doc.data().importance;
                         var docID = doc.id;
+                        //
+                        let time = doc.data().last_updated;
+                        let date = time.toDate();
 
                         let newcard = cardTemplate.content.cloneNode(true);
+                        //
+                        newcard.querySelector('.card-time').innerHTML = date;
 
                         newcard.querySelector('.card-title').innerHTML = title;
                         newcard.querySelector('.card-text').innerHTML = details;
