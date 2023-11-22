@@ -29,6 +29,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
@@ -56,10 +58,74 @@
         <div class="container p-5">
             <h1 class="display-4">Welcome back, <span id="name-goes-here"></span></h1>
             <hr>
-            <p id="quote">Quote of the day:</p>
+            <p id="quote"> Saftey Quote of the day:</p>
         </div>
     </div>
-
+    <!-- FAQ 1 - Bootstrap Brain Component -->
+<section class="bg-light py-3 py-md-5">
+    <div class="container align-items-lg-center">
+      <div class="row gy-5 gy-lg-0 align-items-lg-center">
+       
+        <div class="col-12 col-lg-6">
+          <div class="row justify-content-xl-end">
+            <div class="col-12 col-xl-11">
+              <h2 class="h1 mb-3">How can Local Emergency Help You and Others During Day-to-Day Life?</h2>
+             
+              <div class="accordion accordion-flush" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      What is the Point to Local Emergency?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                     
+                      <ul>
+                        <li>Create posts on accidents or hazardous events you witness and your post will disply on the map to warn others. </li>
+                        <li>See other user's posts so as you travel the city you can check areas to see if any has reported hazards within that area.</li>
+                        <li>Helps keep yourself and others more aware of potiential danger in your city</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      How Can I Create A Post?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      A payment system is a way to transfer money from one person or organization to another. It is a complex process that involves many different parties, including banks, credit card companies, and merchants.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      How to View Other's Post?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>To cancel your account, please follow these steps:</p>
+                      <ul>
+                        <li>Go to our website and sign in to your account.</li>
+                        <li>Click on your profile picture in the top right corner of the page and select "Account Settings."</li>
+                        <li>Scroll to the bottom of the page and click on "Cancel Account."</li>
+                        <li>Enter your password and click on "Cancel Account."</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
@@ -69,6 +135,7 @@
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="./scripts/photoLib.js"></script> -->
     <!-- <script src="./scripts/script.js"></script> -->
 

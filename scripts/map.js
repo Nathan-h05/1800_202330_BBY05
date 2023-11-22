@@ -207,14 +207,13 @@ function addPostPins(map) {
         desc = doc.data().description
 
         // Pushes information into the features array
-        // Storing id in "id" field, and some description of hike in description field
+        
         features.push({
           'type': 'Feature',
           'properties': {
             id: doc.id,  //store the id with each place
             description:
-              //NOTE: we are using the backtick (instead of single quote)
-              //in oder to to embed literals like name into string
+              
               `<h5> ${name}</h5> <p> ${desc} </p>`
           },
           'geometry': {
