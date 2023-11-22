@@ -31,7 +31,7 @@
 
   /* Main page background photo */
   #mainbgphoto {
-    background-image: url('../images/homephoto3.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/homephoto3.png');
     background-color: #ebebeb;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,4 +41,15 @@
   #quote{
     font-size: 1.5rem;
 
+  }
+  body {
+    color: #ffffff;
+  }
+  
+  .black {
+    color: #000000;
+  }
+
+  .white {
+    color: #ffffff;
   }
