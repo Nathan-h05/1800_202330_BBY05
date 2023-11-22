@@ -4,3 +4,12 @@
 #owner {
   font-size: small;
 }
+
+
+
+
+@media only screen and (min-width: 350px) and (max-width: 500px) {
+  #cardsize {
+    max-width: 20rem;
+  }
+}
