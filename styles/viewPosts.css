@@ -1,3 +1,4 @@
+/* Displays who posted it in smaller font  */
 #txtSmall {
   font-size: small;
 }
@@ -7,7 +8,7 @@
 
 
 
-
+/* View for phone to make the content perfectly center  */
 @media only screen and (min-width: 350px) and (max-width: 500px) {
   #cardsize {
     max-width: 20rem;
