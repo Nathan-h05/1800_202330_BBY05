@@ -84,7 +84,7 @@ function savePost() {
     let postTitle = document.getElementById("title").value;
     let tags = document.getElementById("level").value;
     let postDescription = document.getElementById("description").value;
-    alert("SAVE POST is triggered");
+    // alert("SAVE POST is triggered");
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
@@ -123,6 +123,16 @@ function savePost() {
     }
 }
 
+// Only click submit button once / run the functon savePost() once 
+let postReady = true;
+document.getElementById("submit").addEventListener("click", function() {
+    if (postReady) {
+        savePost();
+    }
+    postReady = false;
+});
+
+
 //--------------------------------------------
 //saves the post ID for the user, in an array
 //--------------------------------------------
@@ -135,7 +145,7 @@ function savePostIDforUser(postDocID) {
         })
             .then(() => {
                 console.log("5. Saved to user's document!");
-                alert("Post is complete!");
+                // alert("Post is complete!");
                 window.location.href = "thanks.html";
             })
             .catch((error) => {
