@@ -25,6 +25,8 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Your own CSS styles -->
     <link rel="stylesheet" href="styles/photoLib.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 
     <!-- Other libraries and styles of your own -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
@@ -70,11 +72,15 @@
                         "Date"
                     </i>
                 </p>
-                <div class="d-flex justify-content-end mt-5">
+                <div class="d-flex mt-5 justify-content-between">
+                    <!-- <div id="floatLR"> -->
+                <!-- <i class="material-icons" id="delete-icon">delete</i> -->
+                
                 <a class="btn btn-secondary card-href">Edit</a>
+                <a class="btn btn-danger" id="delete-icon">Delete</a>
+                <!-- <div> -->
                 </div>
-            </div>
-        </div>
+            </div>        </div>
     </template>
 
     <!-- our own footer goes here-->

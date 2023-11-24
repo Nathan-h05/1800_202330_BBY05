@@ -72,6 +72,7 @@ function displayUserPosts(collection) {
                         newcard.querySelector('.card-text').innerHTML = details;
                         newcard.querySelector('.card-tags').innerHTML = tags;
                         newcard.querySelector('.card-image').src = code;
+                        newcard.querySelector('#delete-icon').onclick = () => deletePost(doc.id);
                         newcard.querySelector('a').href = "editPosts.html?docID=" + docID;
 
                         document.getElementById(collection + "-go-here").appendChild(newcard);
@@ -85,3 +86,48 @@ function displayUserPosts(collection) {
 }
 
 displayUserPosts("posts");
+
+
+function deletePost(postid) {
+    var result = confirm("Want to delete?");
+    if (result) {
+        //Logic to delete the item
+        db.collection("posts").doc(postid)
+        .delete()
+        .then(() => {
+            console.log("1. Document deleted from Posts collection");
+            deleteFromMyPosts(postid);
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
+}
+
+
+function deleteFromMyPosts(postid) {
+    firebase.auth().onAuthStateChanged(user => {
+        db.collection("users").doc(user.uid).update({
+                myposts: firebase.firestore.FieldValue.arrayRemove(postid)
+            })
+            .then(() => {
+                console.log("2. post deleted from user doc");
+                deleteFromStorage(postid);
+            })
+    })
+}
+
+
+function deleteFromStorage(postid) {
+    // Create a reference to the file to delete
+    var imageRef = storageRef.child('images/' + postid + '.jpg');
+
+    // Delete the file
+    imageRef.delete().then(() => {
+        // File deleted successfully
+        console.log("3. image deleted from storage");
+        alert("DELETE is completed!");
+        location.reload();
+    }).catch((error) => {
+        // Uh-oh, an error occurred!
+    });
+}
