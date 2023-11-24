@@ -73,7 +73,7 @@ function displayUserPosts(collection) {
                         newcard.querySelector('.card-tags').innerHTML = tags;
                         newcard.querySelector('.card-image').src = code;
                         newcard.querySelector('#delete-icon').onclick = () => deletePost(doc.id);
-                        newcard.querySelector('a').href = "editPosts.html?docID=" + docID;
+                        newcard.querySelector('#edit').href = "editPosts.html?docID=" + docID;
 
                         document.getElementById(collection + "-go-here").appendChild(newcard);
                     })
@@ -118,6 +118,7 @@ function deleteFromMyPosts(postid) {
 
 
 function deleteFromStorage(postid) {
+    let storageRef = firebase.storage().ref();
     // Create a reference to the file to delete
     var imageRef = storageRef.child('images/' + postid + '.jpg');
 
