@@ -25,6 +25,7 @@
 
 
 function showMap() {
+  //getLocation();
   //-----------------------------------------
   // Define and initialize basic mapbox data
   //-----------------------------------------
@@ -32,7 +33,7 @@ function showMap() {
   const map = new mapboxgl.Map({
     container: 'map', // Container ID
     style: 'mapbox://styles/mapbox/streets-v11', // Styling URL
-    center: [-122.964274, 49.236082], // Starting position
+    center: [-122, 48], // Starting position
     zoom: 12 // Starting zoom
   });
 

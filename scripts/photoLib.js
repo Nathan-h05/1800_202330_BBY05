@@ -89,10 +89,10 @@ function displayUserPosts(collection) {
 displayUserPosts("posts");
 
 // Buffer time after window loads to give time for cards to display
-window.onload = setTimeout(loadTagColors, 1000);
+window.onload = setTimeout(loadTagColors, 2000);
 
 function loadTagColors() {
-    console.log("Loaded");
+    console.log("Function loadTagColors() ran");
     var elements = document.getElementsByClassName("tagColor");
     
     for (var i = 0; i < elements.length; i++) {
@@ -107,7 +107,7 @@ function loadTagColors() {
         if (text == "High") {
             elements[i].classList.add("btn-danger");
         }
-        console.log("Loaded btn color");
+        console.log("Loaded tag color");
     }
 }
 

@@ -70,7 +70,7 @@ function displaySingleCardById(collection, postId) {
                     var element = document.getElementById("tagColor");
                     element.classList.add("btn-danger");
                 }
-                console.log("Loaded btn color");
+                console.log("Loaded tag color");
             }
             loadTagColors();
         })
