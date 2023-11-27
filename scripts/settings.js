@@ -75,3 +75,7 @@ function saveUserInfo() {
     //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
 }
+
+function back() {
+    window.location.href = "main.html";
+}
