@@ -70,6 +70,7 @@ function saveUserInfo() {
     })
         .then(() => {
             console.log("Document successfully updated!");
+            window.location.href = "main.html";
         })
     //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
