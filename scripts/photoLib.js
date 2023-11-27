@@ -20,7 +20,7 @@
 //                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
 
 //                 var docID = doc.id; //grab the id for that hike doc.
-                
+
 //                 //update title and text and image
 //                 newcard.querySelector('.card-title').innerHTML = title;
 //                 // newcard.querySelector('.card-length').innerHTML = postLength +"km";
@@ -45,6 +45,7 @@
 // }
 
 // displayCardsDynamically("posts");  //input param is the name of the collection
+let tags;
 function displayUserPosts(collection) {
     let cardTemplate = document.getElementById("postCardTemplate");
 
@@ -58,7 +59,7 @@ function displayUserPosts(collection) {
                         var title = doc.data().name;
                         var details = doc.data().details;
                         var code = doc.data().code;
-                        var tags = doc.data().importance;
+                        tags = doc.data().importance;
                         var docID = doc.id;
                         //
                         let time = doc.data().last_updated;
@@ -80,12 +81,35 @@ function displayUserPosts(collection) {
                 })
                 .catch(error => {
                     console.error("Error getting documents: ", error);
-                });
+                })
         }
     });
 }
 
 displayUserPosts("posts");
+
+// Buffer time after window loads to give time for cards to display
+window.onload = setTimeout(loadTagColors, 1000);
+
+function loadTagColors() {
+    console.log("Loaded");
+    var elements = document.getElementsByClassName("tagColor");
+    
+    for (var i = 0; i < elements.length; i++) {
+        var text = elements[i].innerText;
+
+        if (text == "Low") {
+            elements[i].classList.add("btn-success");
+        }
+        if (text == "Medium") {
+            elements[i].classList.add("btn-warning");
+        }
+        if (text == "High") {
+            elements[i].classList.add("btn-danger");
+        }
+        console.log("Loaded btn color");
+    }
+}
 
 
 function deletePost(postid) {
@@ -93,13 +117,13 @@ function deletePost(postid) {
     if (result) {
         //Logic to delete the item
         db.collection("posts").doc(postid)
-        .delete()
-        .then(() => {
-            console.log("1. Document deleted from Posts collection");
-            deleteFromMyPosts(postid);
-        }).catch((error) => {
-            console.error("Error removing document: ", error);
-        });
+            .delete()
+            .then(() => {
+                console.log("1. Document deleted from Posts collection");
+                deleteFromMyPosts(postid);
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });
     }
 }
 
@@ -107,8 +131,8 @@ function deletePost(postid) {
 function deleteFromMyPosts(postid) {
     firebase.auth().onAuthStateChanged(user => {
         db.collection("users").doc(user.uid).update({
-                myposts: firebase.firestore.FieldValue.arrayRemove(postid)
-            })
+            myposts: firebase.firestore.FieldValue.arrayRemove(postid)
+        })
             .then(() => {
                 console.log("2. post deleted from user doc");
                 deleteFromStorage(postid);
