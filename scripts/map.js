@@ -33,13 +33,19 @@ function showMap() {
   const map = new mapboxgl.Map({
     container: 'map', // Container ID
     style: 'mapbox://styles/mapbox/streets-v11', // Styling URL
-    center: [-122, 48], // Starting position
+    // center: [-122.9927971, 49.2505439], // Starting position
     zoom: 12 // Starting zoom
   });
 
   // Add user controls to map
   map.addControl(new mapboxgl.NavigationControl());
 
+  navigator.geolocation.getCurrentPosition(
+    position => {
+      const userLocation = [position.coords.longitude, position.coords.latitude];
+      
+      // Update the map's center with the user's location
+      map.setCenter(userLocation);
   //------------------------------------
   // Listen for when map finishes loading
   // then Add map features 
@@ -107,7 +113,11 @@ function showMap() {
               'icon-allow-overlap': true // Allows icons to overlap
             }
           });
-
+        },
+        error => {
+          console.error('Error getting user location:', error);
+        }
+      );
           //-----------------------------------------------------------------------
           // Add Click event listener, and handler function that creates a popup
           // that displays info from "hikes" collection in Firestore
