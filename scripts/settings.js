@@ -79,3 +79,7 @@ function saveUserInfo() {
 function back() {
     window.location.href = "main.html";
 }
+
+function logout() {
+    window.location.href = "index.html";
+}
