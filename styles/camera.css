@@ -3,10 +3,7 @@
 }
 
 
-body {
-    position: relative;
-    margin-bottom: 100px;
-}
+
 .bottom-buttons {
     position: fixed;
     bottom: 0;
@@ -26,6 +23,8 @@ h1 {
 }
 
 body {
+  position: relative;
+  margin-bottom: 100px;
     background: radial-gradient(circle at bottom, rgb(155, 155, 247) 0, black 100%);
 height: 100vh;
 overflow: auto;
@@ -53,6 +52,8 @@ overflow: auto;
         
     }
 }
+  /*     border of the camera   */
+
 #camera-feed {
     border: 3px solid rgb(244, 181, 181);border-radius: 10%; /* You can adjust the color and width as needed */
     outline: 3px solid rgb(246, 54, 54);
