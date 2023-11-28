@@ -58,18 +58,14 @@ function uploadPic(postDocID) {
                 .then(function (url) { // Get URL of the uploaded file
                     console.log("3. Got the download URL.");
 
-                    // Now that the image is on Storage, we can go back to the
-                    // post document, and update it with an "image" field
-                    // that contains the url of where the picture is stored.
+                    //The image is on Storage, reference post document,
+                    //and update it with an "image" field that contains the url of where the picture is stored.
                     db.collection("posts").doc(postDocID).update({
                         "code": url // Save the URL into users collection
                     })
                         // AFTER .update is done
                         .then(function () {
                             console.log('4. Added pic URL to Firestore.');
-                            // One last thing to do:
-                            // save this postID into an array for the OWNER
-                            // so we can show "my posts" in the future
                             savePostIDforUser(postDocID);
                         })
                 })
@@ -84,11 +80,10 @@ function savePost() {
     let postTitle = document.getElementById("title").value;
     let tags = document.getElementById("level").value;
     let postDescription = document.getElementById("description").value;
-    // alert("SAVE POST is triggered");
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            // Do something for the user here. 
+            // Update post card with the following information
             var desc = document.getElementById("description").value;
             db.collection("posts").add({
                 userID: user.uid,
@@ -153,61 +148,3 @@ function savePostIDforUser(postDocID) {
             });
     })
 }
-
-
-
-
-// function savePost() {
-
-//   var storageRef = firebase.storage().ref(ImageFile.name);
-
-//   storageRef.put(ImageFile)
-//   console.log("Save post is triggered");
-//   let postTitle = document.getElementById("title").value;
-//   let tags = document.getElementById("level").value;
-//   let postDescription = document.getElementById("description").value;
-//   // alert("SAVE POST is triggered");
-//   var user = firebase.auth().currentUser;
-
-//   if (user) {
-//     var storageRef = firebase.storage().ref(ImageFile.name);
-
-//     // Asynch call to put File Object (global variable ImageFile) onto Cloud
-//     storageRef.put(ImageFile, { contentType: ImageFile.type })
-//       .then(function () {
-//         console.log('Uploaded to Cloud Storage.');
-
-//         // Asynch call to get URL from Cloud
-//         storageRef.getDownloadURL().then(function (url) {
-//           console.log("Got the download URL.");
-
-//           // Get the document for the current user.
-//           db.collection("posts").add({
-//             userID: user.uid,
-//             name: postTitle,
-//             details: postDescription,
-//             importance: tags,
-//             last_updated: firebase.firestore.FieldValue
-//               .serverTimestamp(), //current system time
-//             code: url,
-//             lat: latitude,
-//             lng: longitude,
-//           }).then(() => {
-//             console.log("1. Post document added!");
-//             console.log(doc.id);
-//             uploadPic(doc.id);
-//           }).catch((error) => {
-//             console.error("Error adding document: ", error);
-//           });
-//         }).catch(function (error) {
-//           console.error("Error getting download URL: ", error);
-//         });
-//       }).catch(function (error) {
-//         console.error("Error uploading to Cloud Storage: ", error);
-//       });
-//   } else {
-//     console.log("No user is signed in");
-//     window.location.href = 'login.html';
-//   }
-// }
-

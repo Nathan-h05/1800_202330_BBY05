@@ -3,12 +3,6 @@ let params = new URL( window.location.href ); //get URL of search bar
 let postId = params.searchParams.get( "docID" ); //get value for key "id"
 console.log( postId );
 
-// Check if postId is present in the URL
-// if (postId) {
-//     displaySingleCardById("posts", postId);
-// } else {
-//     console.error("No post ID provided in the URL");
-// }
 
 function populatePostsInfo() {
     firebase.auth().onAuthStateChanged(user => {
