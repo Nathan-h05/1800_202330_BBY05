@@ -38,6 +38,6 @@ quotesCollection.get().then((querySnapshot) => {
   // Display a random quote
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
-  document.getElementById('quote').innerHTML = `<p>Quote of the day: ${randomQuote}</p>`;
+  document.getElementById('quote').innerHTML = `<p class="white">Quote of the day: ${randomQuote}</p>`;
   // document.getElementById("quote").innerText = randomQuote;
 });

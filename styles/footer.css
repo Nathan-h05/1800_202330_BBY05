@@ -1,12 +1,21 @@
 .font {
-  font-size: 35px;
+  font-size: 40px;
   text-align: center;
+  color: black;
 }
 
 p {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* font-size: 12px; */
+  color: black;
 }
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
