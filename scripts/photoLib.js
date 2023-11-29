@@ -113,7 +113,7 @@ function loadTagColors() {
 
 
 function deletePost(postid) {
-    var result = confirm("Want to delete?");
+    var result = confirm("Want to delete permenantly?");
     if (result) {
         //Logic to delete the item
         db.collection("posts").doc(postid)
