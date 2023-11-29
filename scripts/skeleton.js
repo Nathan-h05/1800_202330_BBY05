@@ -26,6 +26,7 @@ function loadSkeleton() {
             // No user is signed in.
             // console.log($('#navbarPlaceholder').load('./text/nav_before_login.html'));
             console.log($('#footerPlaceholder').load('./text/no_user_footer.html'));
+            // window.location.href = "index.html";
         }
     });
 }
