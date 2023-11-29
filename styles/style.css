@@ -1,55 +1,71 @@
-
-
 /*-------------------------------------
  * customize material design icon sizes 
  *-------------------------------------
  */
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-.mainFooter{
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.mainFooter {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  
+
   color: white;
   text-align: center;
 }
+
 .gradient-custom {
   /* fallback for old browsers */
   background: #6a11cb;
-  
+
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-  
+
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
-  }
+}
 
-  /* Main page background photo */
-  #mainbgphoto {
+/* Main page background photo */
+/* #mainbgphoto {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/redblue.jpg');
     background-color: #232121;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
     background-position: center;
-  }
-  #quote{
-    font-size: 1.5rem;
+  } */
+#quote {
+  font-size: 1.5rem;
 
-  }
-  body {
-    color: #ffffff;
-  }
-  
-  .black {
-    color: #000000;
-  }
+}
 
-  .white {
-    color: #ffffff;
-  }
+/* body {
+  color: #ffffff;
+} */
+
+.black {
+  color: #000000;
+}
+
+/* .white {
+  color: #ffffff;
+} */
+
+li {
+  text-align: left;
+}
