@@ -93,7 +93,7 @@ overflow: auto;
   
     
   h1 {
-    font-family:monospace;
+    /* font-family:monospace; */
   }
   
   @keyframes slide {
