@@ -76,9 +76,9 @@ function saveUserInfo() {
     document.getElementById('personalInfoFields').disabled = true;
 }
 
-function back() {
-    window.location.href = "main.html";
-}
+// function back() {
+//     window.location.href = "main.html";
+// }
 
 function logout() {
     window.location.href = "index.html";
