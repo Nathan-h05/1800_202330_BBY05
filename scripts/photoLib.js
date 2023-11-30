@@ -77,6 +77,8 @@ function displayUserPosts(collection) {
                         newcard.querySelector('#edit').href = "editPosts.html?docID=" + docID;
 
                         document.getElementById(collection + "-go-here").appendChild(newcard);
+
+                        noPosts();
                     })
                 })
                 .catch(error => {
@@ -109,6 +111,12 @@ function loadTagColors() {
         }
         console.log("Loaded tag color");
     }
+}
+
+function noPosts() {
+    // The widget is rendered.
+    // Hide the loader.
+    document.getElementById('noPosts').style.display = 'none';
 }
 
 
@@ -155,4 +163,9 @@ function deleteFromStorage(postid) {
     }).catch((error) => {
         // Uh-oh, an error occurred!
     });
+}
+
+
+function addPost() {
+    window.location.href = "camera.html";
 }

@@ -28,7 +28,7 @@
     <!-- Your own CSS styles -->
     <link rel="stylesheet" href="styles/photoLib.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 
     <!-- Other libraries and styles of your own -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
@@ -53,7 +53,14 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <div id="noPosts"></div>
+        <div id="noPosts" class=" mt-5">
+            <h1 style="text-align: center;">No Posts Here</h1>
+            <h2 style="text-align: center;">Click below to post!</h2>
+            <br>
+            <div class="d-flex justify-content-center">
+                <div type="button" onclick="addPost()" class="btn btn-primary">Post</div>
+            </div>
+        </div>
         <!-- <h1><center>Your previous posts</h1> -->
         <!-- Here is the container for cards  -->
 
@@ -70,7 +77,7 @@
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">The description of the inciddent will go in here.</p>
                 <br />
-                <p  class="tagColor card-tags text-center btn">
+                <p class="tagColor card-tags text-center btn">
                     Tag placeholder
                 </p>
                 <br>
@@ -81,11 +88,12 @@
                     </i>
                 </p>
                 <div class="d-flex mt-5 justify-content-between">
-                <a class="btn btn-secondary" id="delete-icon">Delete</a>
-                <a class=" btn btn-primary card-href" id="edit">Edit</a>
+                    <a class="btn btn-secondary" id="delete-icon">Delete</a>
+                    <a class=" btn btn-primary card-href" id="edit">Edit</a>
 
                 </div>
-            </div>        </div>
+            </div>
+        </div>
     </template>
 
     <!-- our own footer goes here-->
