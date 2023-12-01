@@ -1,13 +1,10 @@
-/*     newwwwwwwwwwwwwwwwwwwwwwwwwww backgroundddddddddd   */
 html {
     height: 100%;
   }
   
   body {
-    /* background: radial-gradient(circle at bottom, rgb(155, 155, 247) 0, black 100%); */
     height: 100vh;
     overflow: auto;
-    /* text-align: center; */
     margin: 0;
   }
   

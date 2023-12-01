@@ -78,25 +78,3 @@ function displaySingleCardById(collection, postId) {
             console.error("Error getting document:", error);
         });
 }
-
-
-// setTimeout(doStuff, 1000);
-// function doStuff() {
-//     if (tags == "Low") {
-
-//         var element = document.getElementById("tagColor");
-//         element.classList.add("btn-success");
-//     }
-//     if (tags == "Medium") {
-
-//         var element = document.getElementById("tagColor");
-//         element.classList.add("btn-warning");
-//     }
-//     if (tags == "High") {
-
-//         var element = document.getElementById("tagColor");
-//         element.classList.add("btn-danger");
-//     }
-//     console.log("Loaded btn color");
-// }
-

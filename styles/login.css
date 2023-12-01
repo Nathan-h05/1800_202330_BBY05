@@ -1,9 +1,8 @@
-#indexphoto {
-    background-image: url('../images/index2.png');
+#loginphoto {
+    background-image: url('../images/login.png');
     background-color: #a77878;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
     background-position: center;
   }
-

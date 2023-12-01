@@ -1,8 +1,5 @@
 #map {
   display: flex;
-  /* caused it to zoom in to the left ∨∨∨ */
-  /* align-content: center;
-  justify-content: center; */
   margin: auto;
   
 }

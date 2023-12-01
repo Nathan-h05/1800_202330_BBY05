@@ -1,7 +1,5 @@
 var ImageFile;      //global variable to store the File Object reference
 
-
-// Geo Location
 let latitude;
 let longitude;
 
@@ -16,29 +14,25 @@ function getLocation() {
 function updateLocation(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-
-    // You can use latitude and longitude variables as needed, e.g., send to a server, perform calculations, etc.
     console.log("Latitude: " + latitude + ", Longitude: " + longitude);
 }
-// Call getLocation() when you want to get the current location
+
 getLocation()
 
 
 
-var postDocID = localStorage.getItem("postDocID");    //visible to all functions on this page
+var postDocID = localStorage.getItem("postDocID"); 
 
 
 var ImageFile;
 function listenFileSelect() {
-    // listen for file selection
-    var fileInput = document.getElementById("mypic-input"); // pointer #1
-    const image = document.getElementById("mypic-goes-here"); // pointer #2
+    var fileInput = document.getElementById("mypic-input"); 
+    const image = document.getElementById("mypic-goes-here"); 
 
-    // When a change happens to the File Chooser Input
     fileInput.addEventListener('change', function (e) {
-        ImageFile = e.target.files[0];   //Global variable
+        ImageFile = e.target.files[0];   
         var blob = URL.createObjectURL(ImageFile);
-        image.src = blob; // Display this image
+        image.src = blob; 
     })
 }
 listenFileSelect();
@@ -47,7 +41,7 @@ function uploadPic(postDocID) {
     console.log("inside uploadPic " + postDocID);
     var storageRef = storage.ref("images/" + postDocID + ".jpg");
 
-    storageRef.put(ImageFile)   //global variable ImageFile
+    storageRef.put(ImageFile)   
 
         // AFTER .put() is done
         .then(function () {

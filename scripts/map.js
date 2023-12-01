@@ -1,29 +1,3 @@
-// // Geo Location
-// let latitude;
-// let longitude;
-
-// function getLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(updateLocation);
-//     } else {
-//         console.log("Geolocation is not supported by this browser.");
-//     }
-// }
-
-// function updateLocation(position) {
-//     latitude = position.coords.latitude;
-//     longitude = position.coords.longitude;
-
-//     // You can use latitude and longitude variables as needed, e.g., send to a server, perform calculations, etc.
-//     console.log("Latitude: " + latitude + ", Longitude: " + longitude);
-// }
-// // Call getLocation() when you want to get the current location
-// getLocation()
-
-
-
-
-
 function showMap() {
   //getLocation();
   //-----------------------------------------
