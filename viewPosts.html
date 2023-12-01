@@ -37,6 +37,7 @@
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link rel="stylesheet" href="./styles/viewPosts.css">
     <!-- <script src="./scripts/viewPosts.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="styles/background.css">
 </head>
 
 <body>
@@ -47,11 +48,8 @@
     <!-- our own navbar goes here -->
     <div class="text-center py-1 bg-danger">
         <h1 id="ownerHeader">Post</h1>
-        <!-- <h1> 
-            Uploaded by:<div id="owner"></div> 
-        </h1> -->
     </div>
-    <nav id="navbarPlaceholder"></nav>
+    <br>
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
@@ -68,7 +66,7 @@
     <!-- Templates for general use, not displayed -->
     <template id="postCardTemplate">
         <div class="card py-2 mx-2" id="cardsize">
-            <img class="card-image card-img-top" src=" ..." alt="..." />
+            <img class="card-image card-img-top" src=" ..." alt="..." style="max-width: 500px;"/>
             <div class="card-body text-center">
                 <h1 class="card-title">"Card title"</h1>
                 <p class="card-text">"Description"</p>
@@ -92,9 +90,12 @@
         </div>
     </template>
 
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content"></div>
+
     <!-- Spacing for nav bar -->
-    <div class="text-center py-5">
-    </div>
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
