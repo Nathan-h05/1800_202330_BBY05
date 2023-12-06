@@ -48,11 +48,7 @@ function showMap() {
             // Coordinates
             event_name = doc.data().name; // Event Name
             preview = doc.data().details; // Text Preview
-            // img = doc.data().posterurl; // Image
-            // url = doc.data().link; // URL
 
-            // Pushes information into the features array
-            // in our application, we have a string description of the hike
             features.push({
               'type': 'Feature',
               'properties': {
@@ -94,7 +90,7 @@ function showMap() {
       );
           //-----------------------------------------------------------------------
           // Add Click event listener, and handler function that creates a popup
-          // that displays info from "hikes" collection in Firestore
+          // that displays info from "posts" collection in Firestore
           //-----------------------------------------------------------------------
           map.on('click', 'posts', (e) => {
             // Extract coordinates array.
@@ -189,7 +185,7 @@ function showMap() {
               map.getCanvas().style.cursor = 'pointer';
             });
 
-            // Defaults
+            
             // Defaults cursor when not hovering over the userLocation layer
             map.on('mouseleave', 'userLocation', () => {
               map.getCanvas().style.cursor = '';
@@ -261,11 +257,9 @@ function addPostPins(map) {
       // then show more info on that place
       //-----------------------------------
       map.on('click', 'places', (e) => {
-        //Extract information about the places, and use what you need
-        //const coordinates = e.features[0].geometry.coordinates.slice();
-        //const description = e.features[0].properties.description;
+      
         const id = e.features[0].properties.id;  //get the "id" field
-        //alert(id);
+        
         // re-direct to another page that gives more details about this post (by id)
         window.location.href = './viewPosts.html?docID=' + id;
       });
@@ -287,7 +281,7 @@ function addPostPins(map) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
-        // Extract info of the place that was clicked, like co-ord, description
+        // Extract info of the place that was clicked, coords, and description
         const coordinates = e.features[0].geometry.coordinates.slice();
         const description = e.features[0].properties.description;
 

@@ -14,10 +14,6 @@ function populatePostsInfo() {
                 let details = doc.data().details;
                 let code = doc.data().code;
                 let tags = doc.data().importance;
-                // let time = doc.data().last_updated;
-                // let date = time.toDate();
-                // let lat = doc.data().lat;
-                // let lng = doc.data().lng;
             
                     // Sets header as the title of post
                     if (title != null) {
