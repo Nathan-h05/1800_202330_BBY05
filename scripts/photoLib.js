@@ -1,7 +1,4 @@
 
-//------------------------------------------------------------------------------
-// Input parameter is a string representing the collection we are reading from
-//------------------------------------------------------------------------------
 // displayCardsDynamically("posts");  //input param is the name of the collection
 let tags;
 function displayUserPosts(collection) {
@@ -51,13 +48,12 @@ displayUserPosts("posts");
 // Buffer time after window loads to give time for cards to display
 window.onload = setTimeout(loadTagColors, 3000);
 
+// Adds bootstrap colors to tags depending of value. Grabs div from html after cards have been loaded
 function loadTagColors() {
     console.log("Function loadTagColors() ran");
     var elements = document.getElementsByClassName("tagColor");
-    
     for (var i = 0; i < elements.length; i++) {
         var text = elements[i].innerText;
-
         if (text == "Low") {
             elements[i].classList.add("btn-success");
         }
@@ -93,7 +89,7 @@ function deletePost(postid) {
     }
 }
 
-
+// Delete's post from user doc 
 function deleteFromMyPosts(postid) {
     firebase.auth().onAuthStateChanged(user => {
         db.collection("users").doc(user.uid).update({

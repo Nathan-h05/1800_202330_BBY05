@@ -1,5 +1,4 @@
 function showMap() {
-  //getLocation();
   //-----------------------------------------
   // Define and initialize basic mapbox data
   //-----------------------------------------
@@ -7,7 +6,6 @@ function showMap() {
   const map = new mapboxgl.Map({
     container: 'map', // Container ID
     style: 'mapbox://styles/mapbox/streets-v11', // Styling URL
-    // center: [-122.9927971, 49.2505439], // Starting position
     zoom: 12 // Starting zoom
   });
 
@@ -35,7 +33,7 @@ function showMap() {
         // Add the image to the map style.
         map.addImage('eventpin', image); // Pin Icon
 
-        // READING information from "hikes" collection in Firestore
+        // READING information from "posts" collection in Firestore
         db.collection('posts').get().then((querySnapshot) => {
           const features = []; // Defines an empty array for information to be added to
 
@@ -45,9 +43,8 @@ function showMap() {
             console.log(lat, lng);
             coordinates = [lng, lat];
             console.log(coordinates);
-            // Coordinates
-            event_name = doc.data().name; // Event Name
-            preview = doc.data().details; // Text Preview
+            event_name = doc.data().name; 
+            preview = doc.data().details; 
 
             features.push({
               'type': 'Feature',
@@ -75,7 +72,6 @@ function showMap() {
           map.addLayer({
             'id': 'posts',
             'type': 'symbol',
-            // source: 'places',
             'source': 'posts',
             'layout': {
               'icon-image': 'eventpin', // Pin Icon
@@ -198,7 +194,7 @@ function showMap() {
 }
 
 // Call the function to display the map with the user's location and event pins
-// showMap();
+// window.onload for buffer for pins load on mobile
 window.onload = setTimeout(showMap(), 3000);
 
 function addPostPins(map) {

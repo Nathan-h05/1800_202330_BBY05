@@ -14,16 +14,13 @@ function populatePostsInfo() {
                 let details = doc.data().details;
                 let code = doc.data().code;
                 let tags = doc.data().importance;
-            
-                    // Sets header as the title of post
+
                     if (title != null) {
                     document.getElementById("headerInput").innerText = title;
                     }
-                    // If title is empty, header will be set to "Post"
                     if (title == "") {
                         document.getElementById("headerInput").innerText = "Post";
                     }
-                    //if the data fields are not empty, then write them in to the form.
                     if (code != null) {
                         document.getElementById("codeInput").src = code;
                     }
@@ -57,9 +54,9 @@ function savePostsInfo() {
     //enter code here
 
     //a) get user entered values
-    title = document.getElementById('titleInput').value;       //get the value of the field with id="titleInput"
-    details = document.getElementById('detailsInput').value;     //get the value of the field with id="detailsInput"
-    tags = document.getElementById('tagsInput').value;       //get the value of the field with id="tagsInput"
+    title = document.getElementById('titleInput').value;       
+    details = document.getElementById('detailsInput').value;     
+    tags = document.getElementById('tagsInput').value;       
 
     //b) update user's document in Firestore
     db.collection("posts").doc(postId).update({

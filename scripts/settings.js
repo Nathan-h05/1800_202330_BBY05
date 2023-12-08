@@ -1,8 +1,9 @@
-var currentUser;              
+var currentUser;
+     
+// Fills text fields with users information from firebase 
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-
             currentUser = db.collection("users").doc(user.uid)
             currentUser.get()
                 .then(userDoc => {
@@ -36,10 +37,12 @@ function populateUserInfo() {
 
 populateUserInfo();
 
+// Edit users information
 function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false; 
 }
 
+// Saves users Information to firebase
 function saveUserInfo() {
 
     userName = document.getElementById('nameInput').value;      
@@ -62,6 +65,7 @@ function saveUserInfo() {
     document.getElementById('personalInfoFields').disabled = true;
 }
 
+// Logs user out and directs them to index.html
 function logout() {
     firebase.auth().signOut();
     window.location.href = "index.html";

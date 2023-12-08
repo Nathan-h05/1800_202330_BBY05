@@ -1,4 +1,4 @@
-var ImageFile;      //global variable to store the File Object reference
+var ImageFile;
 let latitude;
 let longitude;
 
@@ -20,10 +20,7 @@ function updateLocation(position) {
 
 getLocation()
 
-
-
 var postDocID = localStorage.getItem("postDocID"); 
-
 
 var ImageFile;
 function listenFileSelect() {

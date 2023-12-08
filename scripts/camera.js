@@ -1,8 +1,8 @@
 const cameraFeed = document.getElementById('camera-feed');
 const photoCanvas = document.getElementById('photo-canvas');
 const captureButton = document.getElementById('capture-button');
-const width = 640; // Adjust the width as needed
-const height = 480; // Adjust the height as needed
+const width = 640; 
+const height = 480; 
 
 // Request access to the user's camera
 navigator.mediaDevices.getUserMedia({ video: true })

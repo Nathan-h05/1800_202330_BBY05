@@ -2,24 +2,17 @@ function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            // Do something for the currently logged-in user here: 
-            console.log(user.uid); //print the uid in the browser console
-            console.log(user.displayName);  //print the user name in the browser console
+            console.log(user.uid); 
+            console.log(user.displayName);
             userName = user.displayName;
-
-            // method #1:  insert with JS
             document.getElementById("name-goes-here").innerText = userName; 
-               
-
         } else {
             // No user is signed in.
         }
     });
 }
-getNameFromAuth(); //run the function
+getNameFromAuth(); 
 
-
-// Reza w quotes gen
 // Reference to the 'quotes' collection
 const quotesCollection = firebase.firestore().collection('quotes');
 
@@ -33,6 +26,5 @@ quotesCollection.get().then((querySnapshot) => {
   // Display a random quote
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
-  document.getElementById('quote').innerHTML = `<p>Safty Quote: ${randomQuote}</p>`;
-  // document.getElementById("quote").innerText = randomQuote;
+  document.getElementById('quote').innerHTML = `<p>Safety Quote: ${randomQuote}</p>`;
 });
