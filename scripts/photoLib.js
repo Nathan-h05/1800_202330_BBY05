@@ -49,7 +49,7 @@ function displayUserPosts(collection) {
 displayUserPosts("posts");
 
 // Buffer time after window loads to give time for cards to display
-window.onload = setTimeout(loadTagColors, 2000);
+window.onload = setTimeout(loadTagColors, 3000);
 
 function loadTagColors() {
     console.log("Function loadTagColors() ran");
