@@ -106,7 +106,7 @@ function deleteFromMyPosts(postid) {
     })
 }
 
-
+//Removes the image from storage when a post is deleted.
 function deleteFromStorage(postid) {
     let storageRef = firebase.storage().ref();
     // Create a reference to the file to delete

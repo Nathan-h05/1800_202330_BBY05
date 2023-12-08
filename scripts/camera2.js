@@ -1,8 +1,8 @@
 var ImageFile;      //global variable to store the File Object reference
-
 let latitude;
 let longitude;
 
+//Grabs the location of the user then updates it through updateLocation function.
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(updateLocation);
@@ -11,6 +11,7 @@ function getLocation() {
     }
 }
 
+//Updates the location of the user so it is on their precise location.
 function updateLocation(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
@@ -37,6 +38,8 @@ function listenFileSelect() {
 }
 listenFileSelect();
 
+//Uploads the picture to Cloud Storage through the postDocID
+//that is saved when you upload a post.
 function uploadPic(postDocID) {
     console.log("inside uploadPic " + postDocID);
     var storageRef = storage.ref("images/" + postDocID + ".jpg");
@@ -69,6 +72,8 @@ function uploadPic(postDocID) {
         })
 }
 
+//Saves the post into the post collection, 
+//which then connects that post to the user that uploaded it through the user.uid
 function savePost() {
     console.log("Save post is triggered");
     let postTitle = document.getElementById("title").value;
