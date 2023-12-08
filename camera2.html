@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="styles/camera2.css">
     <link rel="stylesheet" type="text/css" href="styles/background.css">
 
-    
+
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
@@ -52,45 +52,42 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-        
-        <div class="container text-center">
-            <br>
-            <form>
-                <div class="form-group">
-                    <div class="container py-3">
-                        <input type="file" id="mypic-input" accept="image/*" />
-                        <img id="mypic-goes-here" width=300 height=300 />
-                    </div>
-                    <label class="boxtitle" for="exampleFormControlInput1">Your Post Title: </label>
-                    <input type="text" class="form-control" id="title" placeholder="Title">
-                </div><br>
-                <div class="form-group">
-                    <label class="boxtitle" for="exampleFormControlSelect1">Level of Severity: </label>
-                    <select class="form-control" id="level" placeholder="Select the severity">
-                        <option value="" disabled selected>Select the severity</option>
-                        <option>High</option>
-                        <option>Medium</option>
-                        <option>Low</option>
-                    </select>
-                    <br>
-                    </div>
-                    <div class="form-group">
-                        <label class="boxtitle" for="exampleFormControlTextarea1">Description of Event: </label>
-                        <textarea class="form-control" id="description" placeholder="Description" rows="3"></textarea>
-                    </div>
-                    <br>
-
-                    <br>
-                    <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-lg btn-primary pull-right" id="submit">Create Post</button>
-                    </div>
+    <!-- Thi is the form that users will fill out when they are creating a post.-->
+    <div class="container text-center">
+        <br>
+        <form>
+            <div class="form-group">
+                <div class="container py-3">
+                    <input type="file" id="mypic-input" accept="image/*" />
+                    <img id="mypic-goes-here" width=300 height=300 />
                 </div>
-            </form>
-        </div>
-    <br><br><br><br>
-    
+                <label class="boxtitle" for="exampleFormControlInput1">Your Post Title: </label>
+                <input type="text" class="form-control" id="title" placeholder="Title">
+            </div><br>
+            <div class="form-group">
+                <label class="boxtitle" for="exampleFormControlSelect1">Level of Severity: </label>
+                <select class="form-control" id="level" placeholder="Select the severity">
+                    <option value="" disabled selected>Select the severity</option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="boxtitle" for="exampleFormControlTextarea1">Description of Event: </label>
+                <textarea class="form-control" id="description" placeholder="Description" rows="3"></textarea>
+            </div>
+            <br>
 
-    <!-- stuff -->
+            <br>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-lg btn-primary pull-right" id="submit">Create Post</button>
+            </div>
+    </div>
+    </form>
+    </div>
+    <br><br><br><br>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
