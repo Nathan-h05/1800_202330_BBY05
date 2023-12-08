@@ -202,7 +202,8 @@ function showMap() {
 }
 
 // Call the function to display the map with the user's location and event pins
-showMap();
+// showMap();
+window.onload = setTimeout(showMap(), 3000);
 
 function addPostPins(map) {
 
